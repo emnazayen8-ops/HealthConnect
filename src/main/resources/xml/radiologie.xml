@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comptesRendus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="../xsd/radiologie.xsd">
+
+    <compteRendu id="R001">
+        <patientId>P001</patientId>
+        <prescriptionId>PR001</prescriptionId>
+        <centre>Centre Imagerie Sfax</centre>
+        <typeExamen>Radio</typeExamen>
+        <regionExaminee>Thorax</regionExaminee>
+        <dateExamen>2026-11-21</dateExamen>
+        <description>Pas d'anomalie visible</description>
+        <conclusion>Examen normal</conclusion>
+        <radiologue>Dr Leila Mansour</radiologue>
+        <statut>validee</statut>
+    </compteRendu>
+
+</comptesRendus>

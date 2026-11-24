@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="comptesRendus">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="compteRendu" type="CompteRenduType"
+                            minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="CompteRenduType">
+        <xs:sequence>
+            <xs:element name="patientId" type="xs:string"/>
+            <xs:element name="prescriptionId" type="xs:string"/>
+            <xs:element name="centre" type="xs:string"/>
+            <xs:element name="typeExamen" type="TypeExamenType"/>
+            <xs:element name="regionExaminee" type="xs:string" minOccurs="0"/>
+            <xs:element name="dateExamen" type="xs:date" minOccurs="0"/>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+            <xs:element name="conclusion" type="xs:string" minOccurs="0"/>
+            <xs:element name="radiologue" type="xs:string" minOccurs="0"/>
+            <xs:element name="statut" type="StatutType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="TypeExamenType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Radio"/>
+            <xs:enumeration value="Scanner"/>
+            <xs:enumeration value="IRM"/>
+            <xs:enumeration value="Echographie"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StatutType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="demandee"/>
+            <xs:enumeration value="realisee"/>
+            <xs:enumeration value="validee"/>
+            <xs:enumeration value="archivee"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

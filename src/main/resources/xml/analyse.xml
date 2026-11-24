@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analyses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../xsd/analyse.xsd">
+
+    <analyse id="A001">
+        <patientId>P001</patientId>
+        <prescriptionId>PR001</prescriptionId>
+        <laboratoire>Laboratoire Al Shifa</laboratoire>
+        <nomTest>Glycémie</nomTest>
+        <dateAnalyse>2026-11-21</dateAnalyse>
+        <valeur>1.40</valeur>
+        <unite>g/L</unite>
+        <valeurNormale>0.7 - 1.1</valeurNormale>
+        <critique>false</critique>
+        <statut>validee</statut>
+    </analyse>
+
+    <analyse id="A002">
+        <patientId>P003</patientId>
+        <prescriptionId>PR002</prescriptionId>
+        <laboratoire>Laboratoire Al Shifa</laboratoire>
+        <nomTest>Glycémie</nomTest>
+        <dateAnalyse>2026-11-23</dateAnalyse>
+        <valeur>3.20</valeur>
+        <unite>g/L</unite>
+        <valeurNormale>0.7 - 1.1</valeurNormale>
+        <critique>true</critique>
+        <statut>validee</statut>
+    </analyse>
+
+    <analyse id="A003">
+        <patientId>P003</patientId>
+        <prescriptionId>PR002</prescriptionId>
+        <laboratoire>Laboratoire Al Shifa</laboratoire>
+        <nomTest>HbA1c</nomTest>
+        <dateAnalyse>2026-11-23</dateAnalyse>
+        <valeur>9.80</valeur>
+        <unite>%</unite>
+        <valeurNormale>4 - 6</valeurNormale>
+        <critique>true</critique>
+        <statut>validee</statut>
+    </analyse>
+
+</analyses>

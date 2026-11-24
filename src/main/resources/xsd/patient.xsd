@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="dmp">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dossierPatient" type="DossierPatientType"
+                            minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="DossierPatientType">
+        <xs:sequence>
+            <xs:element name="patient" type="PatientType"/>
+            <xs:element name="antecedents" type="AntecedentsType" minOccurs="0"/>
+            <xs:element name="consultation" type="ConsultationType"
+                        maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PatientType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="prenom" type="xs:string"/>
+            <xs:element name="dateNaissance" type="xs:date"/>
+            <xs:element name="sexe">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="M"/>
+                        <xs:enumeration value="F"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="telephone" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="AntecedentsType">
+        <xs:sequence>
+            <xs:element name="antecedent" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ConsultationType">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="medecin" type="xs:string"/>
+            <xs:element name="clinique" type="xs:string"/>
+            <xs:element name="motif" type="xs:string"/>
+            <xs:element name="diagnostic" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:schema>

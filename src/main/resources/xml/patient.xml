@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="../xsd/patient.xsd">
+
+    <dossierPatient>
+        <patient id="P001">
+            <nom>Ben Ali</nom>
+            <prenom>Ahmed</prenom>
+            <dateNaissance>1985-05-12</dateNaissance>
+            <sexe>M</sexe>
+            <telephone>20123456</telephone>
+        </patient>
+        <antecedents>
+            <antecedent>Diabète</antecedent>
+        </antecedents>
+        <consultation id="C001">
+            <date>2026-11-20</date>
+            <medecin>Dr Sami Trabelsi</medecin>
+            <clinique>Clinique Les Oliviers</clinique>
+            <motif>Fièvre et fatigue</motif>
+            <diagnostic>Infection virale</diagnostic>
+        </consultation>
+    </dossierPatient>
+
+    <dossierPatient>
+        <patient id="P002">
+            <nom>Gharbi</nom>
+            <prenom>Salma</prenom>
+            <dateNaissance>1992-03-08</dateNaissance>
+            <sexe>F</sexe>
+            <telephone>22987654</telephone>
+        </patient>
+        <consultation id="C002">
+            <date>2026-11-21</date>
+            <medecin>Dr Sami Trabelsi</medecin>
+            <clinique>Clinique Les Oliviers</clinique>
+            <motif>Toux persistante</motif>
+        </consultation>
+    </dossierPatient>
+
+    <dossierPatient>
+        <patient id="P003">
+            <nom>Jlassi</nom>
+            <prenom>Karim</prenom>
+            <dateNaissance>1970-09-25</dateNaissance>
+            <sexe>M</sexe>
+        </patient>
+        <antecedents>
+            <antecedent>Diabète</antecedent>
+            <antecedent>Hypertension</antecedent>
+        </antecedents>
+        <consultation id="C003">
+            <date>2026-11-22</date>
+            <medecin>Dr Sami Trabelsi</medecin>
+            <clinique>Clinique Les Oliviers</clinique>
+            <motif>Soif intense et vision floue</motif>
+        </consultation>
+    </dossierPatient>
+
+</dmp>
