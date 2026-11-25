@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prescriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="../xsd/prescription.xsd">
+
+    <prescription id="PR001">
+        <patientId>P001</patientId>
+        <medecin>Dr Sami Trabelsi</medecin>
+        <consultationId>C001</consultationId>
+        <datePrescription>2026-11-20</datePrescription>
+        <analysesDemandees>
+            <analyse>Glycémie à jeun</analyse>
+        </analysesDemandees>
+        <examensDemandes>
+            <examen>Radio du thorax</examen>
+        </examensDemandes>
+        <medicaments>
+            <medicament>Paracétamol 1 g</medicament>
+        </medicaments>
+        <pharmacie>Pharmacie Centrale</pharmacie>
+        <statut>envoyee</statut>
+    </prescription>
+
+    <prescription id="PR002">
+        <patientId>P003</patientId>
+        <medecin>Dr Sami Trabelsi</medecin>
+        <consultationId>C003</consultationId>
+        <datePrescription>2026-11-22</datePrescription>
+        <analysesDemandees>
+            <analyse>Glycémie à jeun</analyse>
+            <analyse>HbA1c</analyse>
+        </analysesDemandees>
+        <statut>creee</statut>
+    </prescription>
+
+</prescriptions>
