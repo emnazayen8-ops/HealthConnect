@@ -15,7 +15,7 @@
         <xs:sequence>
             <xs:element name="patient" type="PatientType"/>
             <xs:element name="antecedents" type="AntecedentsType" minOccurs="0"/>
-            <xs:element name="consultation" type="ConsultationType"
+            <xs:element name="consultation" type="ConsultationType" minOccurs="0"
                         maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>

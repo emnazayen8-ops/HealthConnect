@@ -2,6 +2,7 @@ package validation;
 
 import org.xml.sax.SAXException;
 
+import java.io.StringReader;
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
@@ -40,6 +41,25 @@ public class XmlValidator {
         } catch (IOException e) {
             System.out.println("Erreur de lecture : " + e.getMessage());
             return false;
+        }
+    }
+    public static String validerTexte(String contenuXml, String cheminXsd) {
+        ClassLoader loader = XmlValidator.class.getClassLoader();
+
+        try (InputStream xsd = loader.getResourceAsStream(cheminXsd)) {
+            if (xsd == null) {
+                return "ERREUR : schema introuvable " + cheminXsd;
+            }
+
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = factory.newSchema(new StreamSource(xsd));
+            schema.newValidator().validate(new StreamSource(new StringReader(contenuXml)));
+            return "OK";
+
+        } catch (SAXException e) {
+            return "INVALIDE : " + e.getMessage();
+        } catch (IOException e) {
+            return "ERREUR : " + e.getMessage();
         }
     }
 }
