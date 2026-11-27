@@ -3,6 +3,8 @@ package xpath;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+import java.io.StringReader;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
@@ -29,5 +31,9 @@ public class XPathService {
 
     public String lire(Node noeud, String expression) throws Exception {
         return xpath.evaluate(expression, noeud);
+    }
+    public Document chargerTexte(String contenuXml) throws Exception {
+        return DocumentBuilderFactory.newInstance().newDocumentBuilder()
+                .parse(new InputSource(new StringReader(contenuXml)));
     }
 }

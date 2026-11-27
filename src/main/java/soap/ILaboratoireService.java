@@ -9,4 +9,10 @@ public interface ILaboratoireService {
 
     @WebMethod(operationName = "envoyerResultatAnalyse")
     String envoyerResultatAnalyse(@WebParam(name = "analyseXml") String analyseXml);
+
+    @WebMethod(operationName = "demanderAnalyse")
+    String demanderAnalyse(@WebParam(name = "prescriptionXml") String prescriptionXml);
+
+    @WebMethod(operationName = "obtenirResultatAnalyse")
+    String obtenirResultatAnalyse(@WebParam(name = "prescriptionId") String prescriptionId);
 }
