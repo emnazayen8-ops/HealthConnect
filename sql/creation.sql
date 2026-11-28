@@ -152,3 +152,15 @@ CREATE TABLE IF NOT EXISTS journal_acces (
     FOREIGN KEY (utilisateur_id) REFERENCES utilisateur(id),
     FOREIGN KEY (patient_id) REFERENCES patient(id)
     );
+CREATE TABLE IF NOT EXISTS utilisateur (
+                                           id INT AUTO_INCREMENT PRIMARY KEY,
+                                           login VARCHAR(50) NOT NULL UNIQUE,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL,
+    patient_id VARCHAR(10),
+    medecin_id VARCHAR(10),
+    pharmacie_id VARCHAR(10),
+    FOREIGN KEY (patient_id) REFERENCES patient(id),
+    FOREIGN KEY (medecin_id) REFERENCES medecin(id),
+    FOREIGN KEY (pharmacie_id) REFERENCES pharmacie(id)
+    );
